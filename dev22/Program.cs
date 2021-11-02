@@ -19,7 +19,7 @@ while (index < 20)
 
 index = 0;
 Console.WriteLine();
-Console.WriteLine("20 чисел от -25 до +25:");
+Console.WriteLine("Массив из 20 чисел от -25 до +25 включительно:");
 while (index < 20)
 {
     int val = A[index];
@@ -61,6 +61,24 @@ Console.WriteLine();
 
 Console.WriteLine();
 Console.WriteLine("Элементы массива, не нарушающие порядок знакочередования:");
-Console.Write (A[0]+" ");
-//for (index = 0; index < 20; index++)
-    //if (A[index])
+Console.Write(A[0] + " ");
+int cur = A[0];
+index = 1;
+for (index = 0; index < 20; index++)
+    if (cur < 0 && A[index] > 0)
+    {
+        cur = A[index];
+        Console.Write(cur + " ");
+    }
+    else
+        {
+            if (cur > 0 && A[index] < 0)
+            {
+                cur = A[index];
+                Console.Write(cur + " ");
+            }
+        }
+
+Console.WriteLine();Console.WriteLine();
+Console.WriteLine("The End");
+Console.WriteLine();
